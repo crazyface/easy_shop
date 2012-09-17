@@ -1,11 +1,7 @@
-from PyQt4 import QtCore, QtGui, uic
-from django.contrib.auth import authenticate
+from PyQt4 import QtGui
 from utils import loadUi
 from shop.models import ClientProduct
-#from ui.accounts.frame import Ui_NextFrame
-
-
-#Ui_LoginDialog = loadUi("shop/product_search.ui")
+#from django.conf import settings
 
 
 class ProductSearchView(QtGui.QWidget):
@@ -25,8 +21,8 @@ class ProductSearchView(QtGui.QWidget):
         self.ui.result_table.setRowCount(len(qs))
         for i, item in enumerate(qs):
             self.ui.result_table.setItem(i, 0,
-                                     QtGui.QTableWidgetItem(item.product.name))
+                                 QtGui.QTableWidgetItem(item.product.name))
             self.ui.result_table.setItem(i, 1,
-                                     QtGui.QTableWidgetItem(str(item.quantity)))
-            self.ui.result_table.setItem(i, 2, 
-                                     QtGui.QTableWidgetItem(str(item.price_out)))
+                                 QtGui.QTableWidgetItem(str(item.quantity)))
+            self.ui.result_table.setItem(i, 2,
+                                 QtGui.QTableWidgetItem(str(item.price_out)))
