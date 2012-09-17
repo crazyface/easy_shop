@@ -1,0 +1,11 @@
+*.log
+*.pot
+*.pyc
+local_settings.py
+*.sqlite
+*.sqlite3
+*.db
+.project
+.pydevproject
+media/
+.settings
