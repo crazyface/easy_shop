@@ -2,23 +2,26 @@
 <ui version="4.0">
  <class>ProductSearch</class>
  <widget class="QWidget" name="ProductSearch">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
+    <width>550</width>
     <height>400</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
+    <width>550</width>
     <height>400</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>500</width>
+    <width>550</width>
     <height>400</height>
    </size>
   </property>
@@ -26,51 +29,79 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="0">
-    <widget class="QPushButton" name="search_button">
-     <property name="text">
-      <string>Поиск</string>
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+background: #00009e;
+box-shadow:         3px 3px 5px 6px #ccc;
+}</string>
      </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="rearch_text"/>
-   </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="QTableWidget" name="result_table">
-     <property name="minimumSize">
-      <size>
-       <width>482</width>
-       <height>0</height>
-      </size>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
      </property>
-     <property name="selectionMode">
-      <enum>QAbstractItemView::SingleSelection</enum>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
      </property>
-     <property name="selectionBehavior">
-      <enum>QAbstractItemView::SelectRows</enum>
-     </property>
-     <attribute name="horizontalHeaderHighlightSections">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
-     </attribute>
-     <column>
-      <property name="text">
-       <string>Наименование товара</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Количество</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Цена</string>
-      </property>
-     </column>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0" colspan="3">
+       <widget class="QTableWidget" name="result_table">
+        <property name="minimumSize">
+         <size>
+          <width>509</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #ccc;</string>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <attribute name="horizontalHeaderHighlightSections">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Наименование товара</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Количество</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Цена</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="search_button">
+        <property name="text">
+         <string>Поиск</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="rearch_text"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="close_button">
+        <property name="text">
+         <string>Выход</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

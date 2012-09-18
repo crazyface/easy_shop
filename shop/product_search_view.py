@@ -1,4 +1,4 @@
-from PyQt4 import QtGui
+from PyQt4 import QtGui, QtCore, Qt
 from utils import loadUi
 from shop.models import ClientProduct
 #from django.conf import settings
@@ -16,6 +16,10 @@ class ProductSearchView(QtGui.QWidget):
         self.ui.result_table.horizontalHeader().setResizeMode(
                                                       QtGui.QHeaderView.Fixed)
         self.set_items(self.default_queryset)
+        self.ui.close_button.setShortcut('Esc')
+        self.connect(self.ui.close_button,
+                     QtCore.SIGNAL('clicked()'),
+                     self.close)
 
     def set_items(self, qs):
         self.ui.result_table.setRowCount(len(qs))

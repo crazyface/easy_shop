@@ -6,10 +6,10 @@ if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "easy_shop.settings")
 #    from django.core.management import execute_from_command_line
 #    execute_from_command_line(sys.argv)
-    from shop.product_search_view import ProductSearchView
+    from shop.base_view import BaseView
     from PyQt4 import QtGui
 
     app = QtGui.QApplication(sys.argv)
-    myapp = ProductSearchView()
+    myapp = BaseView()
     myapp.show()
     sys.exit(app.exec_())
